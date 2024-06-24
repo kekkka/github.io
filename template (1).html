@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Юлька, Дианка, Ксюшка!</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #C5EC15, #668BC9);
+    color: #fff;
+    text-align: center;
+  }
+  .heart-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+  .heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #FF0000;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: center;
+    animation: heartbeat 1s infinite;
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #FF0000;
+    border-radius: 50%;
+  }
+  .heart::before {
+    top: -50px;
+    left: 0;
+  }
+  .heart::after {
+    top: 0;
+    left: 50px;
+  }
+  .welcome-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-size: 2em;
+  }
+  
+  @keyframes heartbeat {
+    0% { transform: translate(-50%, -50%) scale(1) rotate(-45deg); }
+    25% { transform: translate(-50%, -50%) scale(1.2) rotate(-45deg); }
+    50% { transform: translate(-50%, -50%) scale(1) rotate(-45deg); }
+    75% { transform: translate(-50%, -50%) scale(1.2) rotate(-45deg); }
+    100% { transform: translate(-50%, -50%) scale(1) rotate(-45deg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="heart-container">
+  <div class="heart"></div>
+  <div class="welcome-message">
+    Юлька, Дианка, Ксюшка! Это разъеб
+  </div>
+</div>
+
+</body>
+</html>
